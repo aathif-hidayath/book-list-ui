@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <div class="container max-w-[700px] mx-auto my-4">
+    <span class="main-loader loader hidden"></span>
+    <div>
+      <button class="px-8 py-3 bg-amber-400 rounded fetch-books-btn" type="button">
+        List all books
+      </button>
+      <button class="px-8 py-3 bg-amber-400 rounded fetch-authors-btn" type="button">
+        List all authors
+      </button>
+      <button class="px-8 py-3 bg-amber-400 rounded add-book-btn" type="button">
+        + Add Book
+      </button>
+      <button class="px-8 py-3 bg-amber-400 rounded add-author-btn" type="button">
+        + Add Author
+      </button>
+    </div>
+    <div class="notifications">
+
+    </div>
+    <div>
+      <div class="add-book-wrapper">
+        <form class="book-form flex flex-col gap-2 hidden">
+          <h3 class="font-bold mt-4">Add Book</h3>
+          <input type="text" name="title" placeholder="Title" class="w-full p-2 border border-gray-300 rounded mb-2">
+          <input type="number" name="price" placeholder="Price" class="w-full p-2 border border-gray-300 rounded mb-2">
+          <div class="flex flex-col items-start gap-2">
+            <span class="loader hidden"></span>
+            <div class="flex">
+              <button class="px-8 py-1 bg-blue-600 text-white rounded-tl-lg rounded-bl-lg save-book-submit-btn" type="button">
+                + Save Book
+              </button>
+              <button class="px-8 py-1 bg-gray-300 rounded-tr-lg rounded-br-lg save-book-cancel-btn" type="button">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="add-author-wrapper">
+        <form class="author-form flex flex-col gap-2 hidden">
+          <h3 class="font-bold mt-4">Add Author</h3>
+          <input required type="text" name="title" placeholder="Name" class="w-full p-2 border border-gray-300 rounded mb-2">
+          <div class="flex flex-col items-start gap-2">
+            <span class="loader hidden"></span>
+            <div class="flex">
+              <button class="px-8 py-1 bg-blue-600 text-white rounded-tl-lg rounded-bl-lg save-author-submit-btn" type="button">
+                + Save Author
+              </button>
+              <button class="px-8 py-1 bg-red-200 rounded-tr-lg rounded-br-lg cancel-author-form-btn" type="button">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="books-list flex flex-col mt-4 gap-2"></ul>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
